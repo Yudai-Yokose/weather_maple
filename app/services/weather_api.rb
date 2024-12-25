@@ -10,7 +10,6 @@ class WeatherApi
   end
 
   def get_weather
-    Rails.logger.info("APIをコールしました！")
     request = self.class.get("/weather", @options) #/weatherエンドポイントへhttpartyのgetリクエストを送信
     JSON.parse(request.body) #生のjsonデータをRuby形式のハッシュにする
   end
