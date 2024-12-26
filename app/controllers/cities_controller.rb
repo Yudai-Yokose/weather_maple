@@ -3,8 +3,8 @@ class CitiesController < ApplicationController
   def index
     @all_cities = City.all.group_by(&:region) #リスト用で天気情報は取得しないのでallでOK
 
-    @picked_up_city = City.where(data_code: [1, 4, 13, 23, 27, 34, 38, 40, 47]) #札幌、仙台、東京、名古屋、大阪、広島、松山、福岡、那覇
-    @picked_up_city_data = @picked_up_city.includes(:weathers).map do |city| #天気情報もとるのでincludes
+    picked_up_city = City.where(data_code: [1, 4, 13, 23, 27, 34, 38, 40, 47]) #札幌、仙台、東京、名古屋、大阪、広島、松山、福岡、那覇
+    @picked_up_city_data = picked_up_city.includes(:weathers).map do |city| #天気情報もとるのでincludes
       weather = fetch_weather(city) #fetch_weatherメソッドを呼び出し
       { city: city, weather: weather } #city情報の配列をcityとweatherをキーとするハッシュに変換して @weather_dataに代入
     end

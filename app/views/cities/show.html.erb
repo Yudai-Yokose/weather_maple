@@ -1,2 +1,164 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
+<div class="grid p-4 gap-4 lg:gap-1 lg:p-12 xl:p-20">
+
+  <div class="card p-4 col-span-full">
+    <div class="flex justify-end">
+      <div class="breadcrumbs w-full text-sm md:text-base md:w-auto">
+        <ul class="flex justify-end">
+          <li>
+            <%= link_to root_path do %>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 mr-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+              </svg>
+              Home
+            <% end %>
+          </li>
+          <li>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 mr-2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <%= @city.prefecture %> / <%= @city.name %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card col-span-full">
+    <div class="card bg-base-100 w-96 w-full">
+      <div class="card-body">
+        <div class="stat-title"><%= @city.region %> エリア</div>
+        <div class="stat-value text-lg"><%= @city.prefecture %> / <%= @city.name %> の天気</div>
+        <div class="stat-title"><%= l @weather.fetched_at, format: "%-m月%-d日 (%A)" %></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3カラム -->
+  <div class="grid lg:gap-4 grid-cols-1 lg:grid-cols-3 w-full">
+
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <div class="avatar">
+          <div class="w-16 rounded-full">
+            <%= image_tag("https://openweathermap.org/img/wn/#{@weather.icon}@2x.png", alt: @weather.description) %>
+          </div>
+        </div>
+      </div>
+      <div class="stat-value"><%= main(@weather.main) %></div>
+      <div class="stat-title"><%= description(@weather.description) %></div>
+      <div class="stat-desc text-secondary">The weather today</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
+        </svg>
+      </div>
+      <div class="stat-title">最高気温</div>
+      <div class="stat-value text-secondary"><%= @weather.temp_max.round %> <span class="text-sm md:text-base">℃</span></div>
+      <div class="stat-desc">The maximum temperature</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure text-info">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0-3.75-3.75M17.25 21 21 17.25" />
+        </svg>
+      </div>
+      <div class="stat-title">最低気温</div>
+      <div class="stat-value text-info"><%= @weather.temp_min.round %> <span class="text-sm md:text-base">℃</span></div>
+      <div class="stat-desc">The minimum temperature</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure text-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 15.182a4.5 4.5 0 0 1-6.364 0M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75Zm-.375 0h.008v.015h-.008V9.75Z" />
+        </svg>
+      </div>
+      <div class="stat-title">体感気温</div>
+      <div class="stat-value text-primary"><%= @weather.temp_feel.round %> <span class="text-sm md:text-base">℃</span></div>
+      <div class="stat-desc">The Feels Like temperature</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+        </svg>
+      </div>
+      <div class="stat-title">湿度</div>
+      <div class="stat-value"><%= @weather.humidity %> <span class="text-sm md:text-base">%</span></div>
+      <div class="stat-desc">The humidity level</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+        </svg>
+      </div>
+      <div class="stat-title">風速</div>
+      <div class="stat-value"><%= @weather.speed.round %> <span class="text-sm md:text-base">m/s</span></div>
+      <div class="stat-desc">The speed of wind</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+        </svg>
+      </div>
+      <div class="stat-title">風向き</div>
+      <div class="stat-value"><%= wind_direction(@weather.deg) %></div>
+      <div class="stat-desc">The wind direction</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        </svg>
+      </div>
+      <div class="stat-title">日の出</div>
+      <div class="stat-value"><%= @weather.sunrise_date.strftime("%H:%M") %></div>
+      <div class="stat-desc">The sunrise of the time</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+      </div>
+      <div class="stat-title">日の入り</div>
+      <div class="stat-value"><%= @weather.sunset_date.strftime("%H:%M") %></div>
+      <div class="stat-desc">The sunset of the time</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+        </svg>
+      </div>
+      <div class="stat-title">気圧</div>
+      <div class="stat-value"><%= @weather.pressure %> <span class="text-sm md:text-base">hPa</span></div>
+      <div class="stat-desc">Air pressure</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block h-8 w-8 stroke-current">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+      </div>
+      <div class="stat-title">視界の距離</div>
+      <div class="stat-value"><%= visibility(@weather.visibility) %> <span class="text-sm md:text-base">km</span></div>
+      <div class="stat-desc">Visibility</div>
+    </div>
+  </div>
+
+</div>
