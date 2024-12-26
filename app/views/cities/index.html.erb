@@ -1,5 +1,76 @@
-<h1>Cities#index</h1>
-<p>Find me in app/views/cities/index.html.erb</p>
-  <div id="map-container">
+<div class="grid gap-0 lg:gap-12 grid-cols-1 lg:grid-cols-2 px-6 lg:px-12 lg:px-24">
+
+  <!-- 左右：左 -->
+  <div class="grid gap-0 md:gap-4 grid-rows-5 md:grid-rows-4">
+    <!-- 上下：上 -->
+    <div class="card mt-12">
+      <div class="card text-primary-content">
+        <div class="card-body">
+          <h2 class="card-title text-gray-300">日本各地の天気情報をチェック</h2>
+          <p class="text-gray-400 text-sm md:text-base hidden md:block">マップから都道府県をクリックして天気情報を見ることもできます</p>
+          <div class="card-actions justify-end">
+            <div class="card-actions justify-end">
+            <!-- スライドバー -->
+              <div class="drawer drawer-end rounded-md">
+                <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+                <div class="drawer-content">
+                  <label for="my-drawer-4" class="drawer-button btn btn-outline btn-secondary mr-2 mt-8 md:mt-4">
+                    一覧から全国の天気を見る
+                  </label>
+                </div>
+                <div class="drawer-side z-50">
+                  <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+                  <ul class="menu bg-base-200 text-base-content min-h-full w-50 md:w-80 p-4">
+                    <% @all_cities.each_with_index do |(region, cities), index| %>
+                      <li class="text-lg font-bold"><%= region %>エリア</li>
+                      <% cities.each do |city| %>
+                        <li>
+                          <%= link_to "#{city.prefecture} / #{city.name}", city_path(id: city.data_code), class: "hover:text-blue-500" %>
+                        </li>
+                      <% end %>
+                      <% if index < @all_cities.size - 1 %>
+                        <div class="divider"></div>
+                      <% end %>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 上下：下 -->
+    <div class="card rounded-lg row-span-5 md:row-span-3 mt-0">
+      <div class="card bg-base-100 w-96 w-full">
+        <div class="grid gap-2 grid-cols-1 md:gap-6 md:grid-cols-2">
+          <% @picked_up_city_data.each do |data| %>
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-figure text-secondary">
+                  <div class="avatar">
+                    <div class="w-16 rounded-full">
+                      <%= image_tag("https://openweathermap.org/img/wn/#{data[:weather].icon}@2x.png", alt: data[:weather].description) %>
+                    </div>
+                  </div>
+                </div>
+                <%= link_to city_path(id: data[:city].data_code), class: "block" do %>
+                <div class="stat-value"><%= main(data[:weather].main) %></div>
+                <div class="stat-title"><%= data[:city].prefecture %> / <%= data[:city].name %></div>
+                <div class="stat-desc text-secondary"><%= description(data[:weather].description) %></div>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 左右：右 -->
+  <div id="map-container" class="hidden md:block">
     <div id="map"></div>
   </div>
+
+</div>
