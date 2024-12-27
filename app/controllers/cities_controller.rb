@@ -27,8 +27,6 @@ class CitiesController < ApplicationController
         weather_data = WeatherApi.attributes_for(response) #Ruby用にハッシュにしたレスポンスをフロント表示用に変換
         latest_data = city.weathers.create(weather_data.merge(fetched_at: Time.current)) #例外は発生させないのでcreate使う.元のハッシュを変更せず、新しいハッシュを生成するmergeメソッド使う
         Rails.logger.info "新しいデータをDBに保存しました!"
-      else
-        flash[:notice] = "天気情報を取得できませんでした。"
       end
     else
       Rails.logger.info "データベースから情報を取得しました!"
