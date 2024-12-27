@@ -1,7 +1,7 @@
 test:
   adapter: postgresql
   encoding: utf8
-  username: postgres
+  username: root
   password: password
-  host: postgres # サービス名に一致させる
+  host: 127.0.0.1
   database: myapp_test
