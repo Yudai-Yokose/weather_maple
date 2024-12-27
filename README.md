@@ -26,11 +26,11 @@
 
 ## サービス名
 
-Weather Maple
+<img src="public/weathermaple.png" alt="Weather Maple Logo" width="25" style="vertical-align: middle; margin-right: 10px;"> Weather Maple
 
 ## サービスについて
 
-旅行前に現地の天気を確認するための天気情報サービスです。気温だけではなく、湿度や日の出日の入りの時間、風速なども確認できるため、旅行時の服装選びや行動予定にも役立ちます。</br>旅行の移動中でも操作しやすいようシンプルなUIにしています。
+旅行前に現地の天気を確認するための天気情報サービスです。</br>気温だけではなく、湿度や日の出日の入りの時間、風速なども確認できるため、旅行時の服装選びや行動予定にも役立ちます。</br>旅行の移動中でも操作しやすいようシンプルなUIにしています！
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
@@ -83,6 +83,7 @@ Weather Maple
 │   ├── schema.rb
 │   └── seeds.rb
 ├── public
+├── spec
 ├── compose.yml
 ├── Dockerfile
 ├── Dockerfile.dev

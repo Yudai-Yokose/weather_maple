@@ -42,24 +42,22 @@ RSpec.describe '天気情報ページ', type: :system, js: true do
     it '指定した地域の詳細な天気情報が表示される' do
       visit city_path(@city.data_code)
 
-      # 都市情報
       expect(page).to have_content(@city.name)
       expect(page).to have_content(@city.prefecture)
       expect(page).to have_content(@city.region)
 
-      # 天気情報
-      expect(page).to have_content(main(@weather.main))
-      expect(page).to have_content(description(@weather.description))
+      expect(page).to have_content(@weather.humidity.to_s)
+      expect(page).to have_content(wind_direction(@weather.deg))
+      expect(page).to have_content(@weather.pressure.to_s)
+      expect(page).to have_content(visibility(@weather.visibility))
       expect(page).to have_content(@weather.temp_max.round.to_s)
       expect(page).to have_content(@weather.temp_min.round.to_s)
       expect(page).to have_content(@weather.temp_feel.round.to_s)
       expect(page).to have_content(@weather.speed.round.to_s)
-      expect(page).to have_content(wind_direction(@weather.deg))
-      expect(page).to have_content(@weather.humidity.to_s)
-      expect(page).to have_content(@weather.pressure.to_s)
       expect(page).to have_content(@weather.sunrise_date.strftime('%H:%M'))
       expect(page).to have_content(@weather.sunset_date.strftime('%H:%M'))
-
+      expect(page).to have_content(main(@weather.main))
+      expect(page).to have_content(description(@weather.description))
       weather_icon_path = "https://openweathermap.org/img/wn/#{@weather.icon}@2x.png"
       expect(page).to have_selector("img[src='#{weather_icon_path}']")
     end

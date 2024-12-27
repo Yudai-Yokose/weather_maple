@@ -17,4 +17,24 @@ FactoryBot.define do
     description { "clear sky" }
     icon { "01d" }
   end
+
+  trait :rain do
+    association :city
+    weather_id { 0 }
+    humidity { 0 }
+    deg { 0 }
+    pressure { 0 }
+    visibility { 0 }
+    temp_max { 0.0 }
+    temp_min { 0.0 }
+    temp_feel { 0.0 }
+    speed { 0 }
+    fetched_at { Time.at(0) }
+    sunrise_date { Time.at(0) }
+    sunset_date { Time.at(0) }
+    main { "Clear" }
+    description { "clear sky" }
+    icon { "01d" }
+  end
+
 end
