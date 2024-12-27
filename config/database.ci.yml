@@ -3,5 +3,5 @@ test:
   encoding: utf8
   username: postgres
   password: password
-  host: db
+  host: postgres # サービス名に一致させる
   database: myapp_test
