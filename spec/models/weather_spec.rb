@@ -15,12 +15,12 @@ RSpec.describe Weather, type: :model do
         temp_min: 0.0,
         temp_feel: 0.0,
         speed: 0,
-        fetched_at: Time.at(0) ,
-        sunrise_date: Time.at(0) ,
-        sunset_date: Time.at(0) ,
+        fetched_at: Time.at(0),
+        sunrise_date: Time.at(0),
+        sunset_date: Time.at(0),
         main: "不明",
         description: "不明",
-        icon: "不明", #レスポンスがおかしかった場合のデフォルト値でテスト
+        icon: "不明", # レスポンスがおかしかった場合のデフォルト値でテスト
       )
     end
 

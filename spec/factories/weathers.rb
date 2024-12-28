@@ -36,5 +36,4 @@ FactoryBot.define do
     description { "clear sky" }
     icon { "01d" }
   end
-
 end
