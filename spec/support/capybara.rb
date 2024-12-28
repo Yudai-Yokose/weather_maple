@@ -4,7 +4,7 @@ Capybara.register_driver :remote_chrome do |app|
   url = ENV['SELENIUM_DRIVER_URL']
   capabilities = ::Selenium::WebDriver::Chrome::Options.new(
     'goog:chromeOptions' => {
-      'args' => ['no-sandbox', 'headless', 'disable-gpu', 'window-size=475,1000', '--force-device-scale-factor=0.5']
+      'args' => [ 'no-sandbox', 'headless', 'disable-gpu', 'window-size=475,1000', '--force-device-scale-factor=0.5' ]
     }
   )
 
