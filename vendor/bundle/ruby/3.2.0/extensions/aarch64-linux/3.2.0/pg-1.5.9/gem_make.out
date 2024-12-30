@@ -26,10 +26,10 @@ creating extconf.h
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/pg-1.5.9/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-sllect sitelibdir\=./.gem.20241228-1299-sllect clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-s4tlu0 sitelibdir\=./.gem.20241230-160-s4tlu0 clean
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/pg-1.5.9/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-sllect sitelibdir\=./.gem.20241228-1299-sllect
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-s4tlu0 sitelibdir\=./.gem.20241230-160-s4tlu0
 compiling gvl_wrappers.c
 compiling pg.c
 compiling pg_binary_decoder.c
@@ -54,9 +54,9 @@ compiling pg_util.c
 linking shared-object pg_ext.so
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/pg-1.5.9/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-sllect sitelibdir\=./.gem.20241228-1299-sllect install
-/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20241228-1299-sllect
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-s4tlu0 sitelibdir\=./.gem.20241230-160-s4tlu0 install
+/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20241230-160-s4tlu0
 installing pg_ext libraries
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/pg-1.5.9/ext
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-sllect sitelibdir\=./.gem.20241228-1299-sllect clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-s4tlu0 sitelibdir\=./.gem.20241230-160-s4tlu0 clean

@@ -6,10 +6,10 @@ checking for altzone in time.h with  -Werror... no
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-8p2xfk sitelibdir\=./.gem.20241228-1299-8p2xfk clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-sw76da sitelibdir\=./.gem.20241230-160-sw76da clean
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-8p2xfk sitelibdir\=./.gem.20241228-1299-8p2xfk
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-sw76da sitelibdir\=./.gem.20241230-160-sw76da
 compiling date_core.c
 compiling date_parse.c
 compiling date_strftime.c
@@ -17,8 +17,8 @@ compiling date_strptime.c
 linking shared-object date_core.so
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-8p2xfk sitelibdir\=./.gem.20241228-1299-8p2xfk install
-/usr/bin/install -c -m 0755 date_core.so ./.gem.20241228-1299-8p2xfk
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-sw76da sitelibdir\=./.gem.20241230-160-sw76da install
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20241230-160-sw76da
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/date-3.4.1/ext/date
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-8p2xfk sitelibdir\=./.gem.20241228-1299-8p2xfk clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-sw76da sitelibdir\=./.gem.20241230-160-sw76da clean

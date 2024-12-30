@@ -7,16 +7,16 @@ checking for whether -std=c99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-wn8dj sitelibdir\=./.gem.20241228-1299-wn8dj clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-m6iupi sitelibdir\=./.gem.20241230-160-m6iupi clean
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-wn8dj sitelibdir\=./.gem.20241228-1299-wn8dj
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-m6iupi sitelibdir\=./.gem.20241230-160-m6iupi
 compiling bootsnap.c
 linking shared-object bootsnap/bootsnap.so
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-wn8dj sitelibdir\=./.gem.20241228-1299-wn8dj install
-/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20241228-1299-wn8dj/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-m6iupi sitelibdir\=./.gem.20241230-160-m6iupi install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20241230-160-m6iupi/bootsnap
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bootsnap-1.18.4/ext/bootsnap
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-wn8dj sitelibdir\=./.gem.20241228-1299-wn8dj clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-m6iupi sitelibdir\=./.gem.20241230-160-m6iupi clean
