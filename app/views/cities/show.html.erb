@@ -1,8 +1,8 @@
-<div class="grid p-4 gap-4 lg:gap-1 lg:p-12 xl:p-20">
+<div class="grid p-4 gap-4 lg:gap-0 lg:p-12 xl:p-20">
 
-  <div class="card p-4 col-span-full">
+  <div class="card">
     <div class="flex justify-end">
-      <div class="breadcrumbs w-full text-sm md:text-base md:w-auto">
+      <div class="breadcrumbs w-full text-base md:text-lg md:w-auto">
         <ul class="flex justify-end">
           <li>
             <%= link_to root_path do %>
@@ -23,17 +23,16 @@
     </div>
   </div>
 
-  <div class="card col-span-full">
-    <div class="card bg-base-100 w-96 w-full">
+  <div class="card">
+    <div class="card bg-base-100 w-full">
       <div class="card-body">
         <div class="stat-title"><%= @city.region %> エリア</div>
-        <div class="stat-value text-lg"><%= @city.prefecture %> / <%= @city.name %> の天気</div>
+        <div class="stat-value text-base md:text-xl"><%= @city.prefecture %> / <%= @city.name %> の天気</div>
         <div class="stat-title"><%= l @weather.fetched_at, format: "%-m月%-d日 (%A)" %></div>
       </div>
     </div>
   </div>
 
-  <!-- 3カラム -->
   <div class="grid lg:gap-4 grid-cols-1 lg:grid-cols-3 w-full">
 
     <div class="stat">

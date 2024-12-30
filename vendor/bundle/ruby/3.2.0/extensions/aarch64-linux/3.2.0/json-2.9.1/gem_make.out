@@ -9,16 +9,16 @@ checking for whether -std=c99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/json-2.9.1/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-ru0zgw sitelibdir\=./.gem.20241228-1299-ru0zgw clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-ckvaoq sitelibdir\=./.gem.20241230-160-ckvaoq clean
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/json-2.9.1/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-ru0zgw sitelibdir\=./.gem.20241228-1299-ru0zgw
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-ckvaoq sitelibdir\=./.gem.20241230-160-ckvaoq
 compiling parser.c
 linking shared-object json/ext/parser.so
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/json-2.9.1/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-ru0zgw sitelibdir\=./.gem.20241228-1299-ru0zgw install
-/usr/bin/install -c -m 0755 parser.so ./.gem.20241228-1299-ru0zgw/json/ext
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-ckvaoq sitelibdir\=./.gem.20241230-160-ckvaoq install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20241230-160-ckvaoq/json/ext
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/json-2.9.1/ext/json/ext/parser
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-ru0zgw sitelibdir\=./.gem.20241228-1299-ru0zgw clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-ckvaoq sitelibdir\=./.gem.20241230-160-ckvaoq clean

@@ -26,17 +26,17 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-m8fd9q sitelibdir\=./.gem.20241228-1299-m8fd9q clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-k43xw4 sitelibdir\=./.gem.20241230-160-k43xw4 clean
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-m8fd9q sitelibdir\=./.gem.20241228-1299-m8fd9q
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-k43xw4 sitelibdir\=./.gem.20241230-160-k43xw4
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-m8fd9q sitelibdir\=./.gem.20241228-1299-m8fd9q install
-/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20241228-1299-m8fd9q
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-k43xw4 sitelibdir\=./.gem.20241230-160-k43xw4 install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20241230-160-k43xw4
 
 current directory: /myapp/vendor/bundle/ruby/3.2.0/gems/bigdecimal-3.1.9/ext/bigdecimal
-make DESTDIR\= sitearchdir\=./.gem.20241228-1299-m8fd9q sitelibdir\=./.gem.20241228-1299-m8fd9q clean
+make DESTDIR\= sitearchdir\=./.gem.20241230-160-k43xw4 sitelibdir\=./.gem.20241230-160-k43xw4 clean

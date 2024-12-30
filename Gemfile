@@ -64,3 +64,4 @@ end
 
 gem "httparty"
 gem "dotenv-rails"
+gem "meta-tags"
