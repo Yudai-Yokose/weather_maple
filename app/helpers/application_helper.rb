@@ -1,23 +1,22 @@
 module ApplicationHelper
-
   def default_meta_tags
     {
-      site: 'Weather maple',
-      title: '旅行前に現地の天気を確認するための天気情報サービス',
+      site: "Weather maple",
+      title: "旅行前に現地の天気を確認するための天気情報サービス",
       reverse: true,
-      charset: 'utf-8',
-      description: 'Weather mapleを使えば、湿度や日の出日の入りの時間、風速なども確認できるため、服装選びや行動予定にも役立ちます',
-      keywords: '天気、旅行',
+      charset: "utf-8",
+      description: "Weather mapleを使えば、湿度や日の出日の入りの時間、風速なども確認できるため、服装選びや行動予定にも役立ちます",
+      keywords: "天気、旅行",
       canonical: request.original_url,
-      separator: '|',
+      separator: "|",
       og: {
         site_name: :site,
         title: :title,
         description: :description,
-        type: 'website',
+        type: "website",
         url: request.original_url,
         image: "/weathermaple.png",
-        local: 'ja-JP'
+        local: "ja-JP"
       }
     }
   end
